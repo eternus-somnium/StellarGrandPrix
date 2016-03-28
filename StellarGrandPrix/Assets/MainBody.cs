@@ -15,6 +15,7 @@ public class MainBody : MonoBehaviour {
 		rb.AddForce (transform.forward * speed * Input.GetAxis ("Vertical"));
 		rb.AddForce (transform.right * speed * Input.GetAxis ("Horizontal"));
 		rb.AddTorque (transform.up * speed * Input.GetAxis ("Yaw"));
+		rb.AddTorque (transform.forward * speed * Input.GetAxis ("Roll"));
 		rb.AddTorque (transform.right * speed * Input.GetAxis ("Pitch"));
 	}
 }
