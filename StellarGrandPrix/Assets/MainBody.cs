@@ -23,12 +23,12 @@ public class MainBody : MonoBehaviour {
 			fwd.GetComponent<Rigidbody> ().AddForce (transform.up * 0.4f * speed * Input.GetAxis ("Pitch"));
 		}
 		foreach (GameObject rightThruster in rightThrusters) {
-			rightThruster.GetComponent<Rigidbody> ().AddForce (transform.right * speed * 0.5f * Input.GetAxis ("Horizontal"));
-			rightThruster.GetComponent<Rigidbody> ().AddForce (-transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
+			rightThruster.GetComponent<Rigidbody> ().AddForce (rightThruster.transform.forward * speed * 0.5f * -Input.GetAxis ("Horizontal"));
+			rightThruster.GetComponent<Rigidbody> ().AddForce (-rightThruster.transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
 		}
 		foreach (GameObject leftThruster in leftThrusters) {
-			leftThruster.GetComponent<Rigidbody> ().AddForce (transform.right * speed * 0.5f * Input.GetAxis ("Horizontal"));
-			leftThruster.GetComponent<Rigidbody> ().AddForce (transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
+			leftThruster.GetComponent<Rigidbody> ().AddForce (leftThruster.transform.forward * speed * 0.5f * Input.GetAxis ("Horizontal"));
+			leftThruster.GetComponent<Rigidbody> ().AddForce (leftThruster.transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
 		}
 
 		rightThrusters[0].GetComponent<Rigidbody> ().AddForce (-transform.right * speed * 0.5f * Input.GetAxis ("Yaw"));
