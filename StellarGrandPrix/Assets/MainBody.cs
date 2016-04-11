@@ -17,16 +17,28 @@ public class MainBody : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		/*rb.AddForce (transform.forward * speed * Input.GetAxis ("Vertical"));
-		rb.AddForce (transform.right * speed * Input.GetAxis ("Horizontal"));
-		rb.AddTorque (transform.up * speed * Input.GetAxis ("Yaw"));
-		rb.AddTorque (transform.forward * speed * Input.GetAxis ("Roll"));
-		rb.AddTorque (transform.right * speed * Input.GetAxis ("Pitch"));*/
 		foreach (GameObject fwd in forwardThurusters) {
 			fwd.GetComponent<Rigidbody> ().AddForce (transform.forward * speed * Input.GetAxis ("Vertical"));
+			fwd.GetComponent<Rigidbody> ().AddForce (transform.right * 0.4f * speed * Input.GetAxis ("Horizontal"));
+			fwd.GetComponent<Rigidbody> ().AddForce (transform.up * 0.4f * speed * Input.GetAxis ("Pitch"));
 		}
 		foreach (GameObject rightThruster in rightThrusters) {
-			rightThruster.GetComponent<Rigidbody> ().AddForce (-transform.forward * speed * 0.5f * Input.GetAxis ("Horizontal"));
+			rightThruster.GetComponent<Rigidbody> ().AddForce (transform.right * speed * 0.5f * Input.GetAxis ("Horizontal"));
+			rightThruster.GetComponent<Rigidbody> ().AddForce (-transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
 		}
+		foreach (GameObject leftThruster in leftThrusters) {
+			leftThruster.GetComponent<Rigidbody> ().AddForce (transform.right * speed * 0.5f * Input.GetAxis ("Horizontal"));
+			leftThruster.GetComponent<Rigidbody> ().AddForce (transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
+		}
+
+		rightThrusters[0].GetComponent<Rigidbody> ().AddForce (-transform.right * speed * 0.5f * Input.GetAxis ("Yaw"));
+		rightThrusters[0].GetComponent<Rigidbody> ().AddForce (-transform.right * speed * 0.5f * Input.GetAxis ("Yaw"));
+		leftThrusters[0].GetComponent<Rigidbody> ().AddForce (transform.right * speed * 0.5f * Input.GetAxis ("Yaw"));
+		rightThrusters[1].GetComponent<Rigidbody> ().AddForce (transform.right * speed * 0.5f * Input.GetAxis ("Yaw"));
+		rightThrusters[1].GetComponent<Rigidbody> ().AddForce (-transform.up * speed * 0.5f * Input.GetAxis ("Pitch"));
+		leftThrusters[1].GetComponent<Rigidbody> ().AddForce (-transform.right * speed * 0.5f * Input.GetAxis ("Yaw"));
+		leftThrusters[0].GetComponent<Rigidbody> ().AddForce (-transform.up * speed * 0.5f * Input.GetAxis ("Pitch"));
+		forwardThurusters[0].GetComponent<Rigidbody> ().AddForce (transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
+		forwardThurusters[1].GetComponent<Rigidbody> ().AddForce (-transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
 	}
 }
