@@ -45,7 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Cannon.cs" />
      <Compile Include="Assets\MainBody.cs" />
+     <Compile Include="Assets\Projectile.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity-5.3.4/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

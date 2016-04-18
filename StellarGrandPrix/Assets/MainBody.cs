@@ -9,6 +9,9 @@ public class MainBody : MonoBehaviour {
 	public GameObject[] forwardThurusters;
 	public GameObject[] leftThrusters;
 	public GameObject[] rightThrusters;
+	public GameObject[] cannons;
+
+	public GameObject bullet;
 
 	// Use this for initialization
 	void Start () {
@@ -40,5 +43,11 @@ public class MainBody : MonoBehaviour {
 		leftThrusters[0].GetComponent<Rigidbody> ().AddForce (-transform.up * speed * 0.5f * Input.GetAxis ("Pitch"));
 		forwardThurusters[0].GetComponent<Rigidbody> ().AddForce (transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
 		forwardThurusters[1].GetComponent<Rigidbody> ().AddForce (-transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
+
+		if (Input.GetButton ("Fire")) {
+			foreach (GameObject cannon in cannons) {
+				Instantiate (bullet, cannon.transform.position, transform.rotation);
+			}
+		}
 	}
 }
