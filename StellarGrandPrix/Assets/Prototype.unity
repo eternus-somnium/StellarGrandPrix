@@ -154,6 +154,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 186712050}
+  - 114: {fileID: 186712051}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -173,6 +174,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1871831256}
   m_RootOrder: 7
+--- !u!114 &186712051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 186712049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b3ce7d3a8533143b8a519c9c8a7f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 120226, guid: eab2d38daa1523046971d33fce7b27fb, type: 2}
 --- !u!1 &286600329
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +555,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1496165712}
+  - 114: {fileID: 1496165713}
   m_Layer: 0
   m_Name: Cannon (1)
   m_TagString: Untagged
@@ -561,6 +575,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1871831256}
   m_RootOrder: 8
+--- !u!114 &1496165713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1496165711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b3ce7d3a8533143b8a519c9c8a7f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 120226, guid: eab2d38daa1523046971d33fce7b27fb, type: 2}
 --- !u!1 &1700274878
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb277c325957ac74c80b3865dbcad387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hull: 100
   speed: 60
   forwardThurusters:
   - {fileID: 529541553}
@@ -739,6 +766,82 @@ MonoBehaviour:
   - {fileID: 1700274878}
   - {fileID: 1147978336}
   cannons:
-  - {fileID: 186712049}
-  - {fileID: 1496165711}
+  - {fileID: 186712051}
+  - {fileID: 1496165713}
+  fireRate: 0.15
   bullet: {fileID: 120226, guid: eab2d38daa1523046971d33fce7b27fb, type: 2}
+--- !u!1 &2137371900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2137371904}
+  - 33: {fileID: 2137371903}
+  - 65: {fileID: 2137371902}
+  - 23: {fileID: 2137371901}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &2137371901
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137371900}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!65 &2137371902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137371900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &2137371903
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137371900}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2137371904
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137371900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 48}
+  m_LocalScale: {x: -33.73, y: 33.66, z: 3.91}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2

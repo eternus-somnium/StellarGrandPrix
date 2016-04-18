@@ -3,13 +3,16 @@ using System.Collections;
 
 public class MainBody : MonoBehaviour {
 
+	public int hull = 100;
 	public float speed = 60;
 	private Rigidbody rb;
 	private Vector3 directionVector;
 	public GameObject[] forwardThurusters;
 	public GameObject[] leftThrusters;
 	public GameObject[] rightThrusters;
-	public GameObject[] cannons;
+	public Cannon[] cannons;
+	public float fireRate;
+	private float cooldown = 0;
 
 	public GameObject bullet;
 
@@ -20,6 +23,8 @@ public class MainBody : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (cooldown > 0)
+			cooldown -= Time.deltaTime;
 		foreach (GameObject fwd in forwardThurusters) {
 			fwd.GetComponent<Rigidbody> ().AddForce (transform.forward * speed * Input.GetAxis ("Vertical"));
 			fwd.GetComponent<Rigidbody> ().AddForce (transform.right * 0.4f * speed * Input.GetAxis ("Horizontal"));
@@ -44,10 +49,16 @@ public class MainBody : MonoBehaviour {
 		forwardThurusters[0].GetComponent<Rigidbody> ().AddForce (transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
 		forwardThurusters[1].GetComponent<Rigidbody> ().AddForce (-transform.up * speed * 0.5f * Input.GetAxis ("Roll"));
 
-		if (Input.GetButton ("Fire")) {
-			foreach (GameObject cannon in cannons) {
-				Instantiate (bullet, cannon.transform.position, transform.rotation);
+		if (Input.GetButton ("Fire") && cooldown <= 0) {
+			foreach (Cannon cannon in cannons) {
+				cannon.Fire ();
+				cooldown = fireRate;
 			}
 		}
+	}
+
+	public void Damage(int amount)
+	{
+		hull -= amount;
 	}
 }
