@@ -547,6 +547,7 @@ FixedJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
+<<<<<<< HEAD:StellarGrandPrix/Assets/Scenes/Prototype.unity
 --- !u!1 &1428818823 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 99e407e42df29884e9a1d869bb7c2be1, type: 3}
@@ -587,21 +588,32 @@ BoxCollider:
   m_Size: {x: 22, y: 19.05256, z: 1.7320509}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1496165711
+=======
+--- !u!1 &1578036361
+>>>>>>> refs/remotes/origin/master:StellarGrandPrix/Assets/Prototype.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
+<<<<<<< HEAD:StellarGrandPrix/Assets/Scenes/Prototype.unity
   - 4: {fileID: 1496165712}
   - 114: {fileID: 1496165713}
   m_Layer: 0
   m_Name: Cannon (1)
+=======
+  - 4: {fileID: 1578036363}
+  - 114: {fileID: 1578036362}
+  m_Layer: 0
+  m_Name: GameController
+>>>>>>> refs/remotes/origin/master:StellarGrandPrix/Assets/Prototype.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:StellarGrandPrix/Assets/Scenes/Prototype.unity
 --- !u!4 &1496165712
 Transform:
   m_ObjectHideFlags: 0
@@ -615,10 +627,14 @@ Transform:
   m_Father: {fileID: 1871831256}
   m_RootOrder: 8
 --- !u!114 &1496165713
+=======
+--- !u!114 &1578036362
+>>>>>>> refs/remotes/origin/master:StellarGrandPrix/Assets/Prototype.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:StellarGrandPrix/Assets/Scenes/Prototype.unity
   m_GameObject: {fileID: 1496165711}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -668,6 +684,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99e407e42df29884e9a1d869bb7c2be1, type: 3}
   m_IsPrefabParent: 0
+=======
+  m_GameObject: {fileID: 1578036361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f6948bcc9441e46b3288a37cec7836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1578036363
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1578036361}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+>>>>>>> refs/remotes/origin/master:StellarGrandPrix/Assets/Prototype.unity
 --- !u!1 &1700274878
 GameObject:
   m_ObjectHideFlags: 0
