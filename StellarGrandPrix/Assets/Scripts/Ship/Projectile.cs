@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour {
 
 	void OnTriggerEnter(Collider target)
 	{
-		if (!target.gameObject.GetComponent<Projectile> ()) {
+		if (!target.gameObject.GetComponent<Projectile> () && !target.gameObject.GetComponent<Ring> ()) {
 			print ("Baf");
 			if (target.gameObject.GetComponent<MainBody> ())
 				target.gameObject.GetComponent<MainBody> ().Damage (damage);
